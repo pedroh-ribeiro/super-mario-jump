@@ -97,7 +97,7 @@
     width: 300px;
     right: 100%;
     top: 0;
-    animation: sun-animation 60s linear;
+    animation: sun-animation 60s infinite linear;
 }
 
 @keyframes sun-animation {

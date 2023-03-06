@@ -1,4 +1,3 @@
-
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const main_audio = new Audio ('./sounds/main.mp3');
@@ -7,7 +6,19 @@ const titulo = document.querySelector('.titulo');
 const scoreBoardPosition = document.querySelector('.score-board')
 let pontuacao = document.getElementById('pontos')
 let pontos = -13
+const sun = document.querySelector('.sol')
 
+const trocarNoite = () => {
+    if(Number(pontos) > 600) {
+        if(Math.floor(Number(pontos) / 600) % 2 == 1) {
+            sun.src = 'images/moon.png'
+        } else {
+            sun.src = 'images/sun.png'
+        }
+    } else {
+        sun.src = 'images/sun.png'
+    }
+}
 
 
 const startGame = () => {
@@ -35,7 +46,7 @@ const ganharPontos = () => {
 
 const loop = setInterval(() => {
     main_audio.play()
-
+    trocarNoite()
     const pipePosition =  pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
 
@@ -66,7 +77,6 @@ const loop = setInterval(() => {
         
     
 }, 10);
-
 
 
 document.addEventListener('click', startGame);
