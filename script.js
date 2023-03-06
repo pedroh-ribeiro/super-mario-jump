@@ -9,14 +9,24 @@ let pontos = -13
 const sun = document.querySelector('.sol')
 
 const trocarNoite = () => {
-    if(Number(pontos) > 600) {
-        if(Math.floor(Number(pontos) / 600) % 2 == 1) {
+    if(Number(pontos) > 100) {
+        if(Math.floor(Number(pontos) / 200) % 2 == 1) {
             sun.src = 'images/moon.png'
+            pipe.src = 'images/canhao.png'
+            pipe.style.width = '100px'
         } else {
             sun.src = 'images/sun.png'
+            pipe.src = 'images/pipe-novo.png'
+            pipe.style.width = '80px'
+
+
         }
     } else {
         sun.src = 'images/sun.png'
+        pipe.src = 'images/pipe-novo.png'
+        pipe.style.width = '80px'
+
+
     }
 }
 
