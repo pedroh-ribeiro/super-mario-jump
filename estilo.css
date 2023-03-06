@@ -13,8 +13,21 @@
     position: relative;
     margin: 0 auto;
     overflow: hidden;
-    background-image: linear-gradient(to bottom, #3a8ff1, #9099a1);
+    animation: dia-noite 120s infinite linear;
 }
+
+@keyframes dia-noite {
+    0% {
+        background-image: linear-gradient(to bottom, #3a8ff1, rgb(129, 177, 219));
+        transition: 60s;
+    }
+
+    100% {
+        background-image: linear-gradient(to bottom, #060e1c, #123a6d, #00dbd7);
+    }
+}
+
+
 
 .pipe {
     width: 80px;
